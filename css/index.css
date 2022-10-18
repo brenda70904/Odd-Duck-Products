@@ -8,7 +8,7 @@ body {
   background-color: #aa7239;
   grid-template-columns: repeat(4) 1fr;
   grid-template-rows: 20% 70% 10%;
-  font-family: 'FuSzzy Bubbles', cursive;
+  font-family: 'Fuzzy Bubbles', cursive;
 }
 
 /* header section */
