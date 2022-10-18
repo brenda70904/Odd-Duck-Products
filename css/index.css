@@ -1,5 +1,7 @@
 * {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 /* whole body set as grid */
@@ -34,15 +36,15 @@ main {
   grid-column: 1/5;
   grid-row: 2/4;
   display: grid;
-  grid-template-columns: repeat(4) 1fr;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
   grid-template-rows: 50% 15% 35%;
-  gap:10px 10px;
 }
 
 #result {
   background-color: #d5a677;
   grid-column: 1/2;
   grid-row: 1/4;
+  list-style: disc;
 }
 
 #imageSection {
@@ -54,13 +56,37 @@ main {
   padding: 10px;
 }
 
+image{
+  width: 50px;
+}
+#p1:hover {
+  border: 5px solid #241200;
+  cursor: pointer;
+}
+
+#p2:hover {
+  border: 5px solid #241200;
+  cursor: pointer;
+}
+
+#p3:hover {
+  border: 5px solid #241200;
+  cursor: pointer;
+}
+
 section img {
   padding: 10px;
 }
 
-article{
-  grid-row: 2/4;
-grid-column: 2/5;
+button{
+  height: 50px;
+  grid-row: 3/4;
+  grid-column: 1/2;
+}
+
+article {
+  grid-row: 2/3;
+  grid-column: 3/5;
 }
 
 footer {
