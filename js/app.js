@@ -75,7 +75,6 @@ function renderImage() {
 
 }
 
-
 // function renderResults() {
 //   // for (let i = 0; i < allProducts.length; i++) {
 //   //   let li = document.createElement('li');
@@ -99,15 +98,15 @@ function handleClick(event) {
   }
   if (howManyTimesUserHasVoted === maxNumberOfVotes) {
     container.removeEventListener('click', handleClick);
+    storeProductData();
     renderChart();
     // btn.class= 'clicks-allowed';
     // btn.addEventListener('click', renderChart);
   } else {
     renderImage();
   }
-
 }
-
+// render chart on
 function renderChart() {
 
   const productName = [];
@@ -115,12 +114,11 @@ function renderChart() {
   const productScore = [];
 
   for (let i = 0; i < allProducts.length; i++) {
-    console.log(allProducts[i]);
     productName.push(allProducts[i].name);
     productViews.push(allProducts[i].views);
     productScore.push(allProducts[i].score);
   }
-
+  // run getProductData function
   const data = {
     labels: productName,
     datasets: [
@@ -135,7 +133,7 @@ function renderChart() {
         label: 'Product score',
         data: productScore,
         backgroundColor: [
-          'rgba(255, 99, 132, 0.2)'],
+          '#5C301F'],
         borderColor: [
           'rgb(255, 99, 132)'],
         borderWidth: 1
@@ -145,6 +143,7 @@ function renderChart() {
   const config = {
     type: 'bar',
     data: data,
+    yAxes: [{ ticks: { stepSize: 1 } }],
     options: {
       scales: {
         y: {
@@ -160,12 +159,28 @@ function renderChart() {
     config
   );
 }
+//fucntion that store all the result?
+//save the resule to local storage
+
+
+// function that do the storing action
+function storeProductData() {
+  let stringfiedProduct = JSON.stringify(allProducts);
+  // console.log(stringfiedProduct);
+  localStorage.setItem('products', stringfiedProduct);
+}
+// storeProductData();
+
+//fuction that get item
+function getProductData() {
+  let pickProducts = localStorage.getItem('products');
+  if (pickProducts) {
+    let parseProducts = JSON.parse(pickProducts);
+    console.log(parseProducts);
+    allProducts = parseProducts;
+  }
+}
 
 container.addEventListener('click', handleClick);
+getProductData();
 renderImage();
-//4. connect to DOM
-
-//5. add score and view
-
-
-//6. show result at the end.
