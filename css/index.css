@@ -7,7 +7,7 @@ body {
   display: grid;
   background-color: #aa7239;
   grid-template-columns: 100px 1fr 1fr;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto 1fr 1fr;
   font-family: 'Fuzzy Bubbles', cursive;
 }
 
@@ -32,11 +32,12 @@ header {
 /* main section */
 
 main {
+  height: 100%;
   grid-column: 1/5;
-  grid-row: 2/4;
+  grid-row: 2/3;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 50% 50% ;
+  grid-template-rows: 1fr 1fr ;
 }
 
 article{
@@ -54,10 +55,10 @@ article{
   padding: 10px;
 }
 
-image{
-  max-height: 400px;
+section img{
+  max-width: 250px;
+  max-height: 300px;
   flex: 1 1 30%;
-  width: 50px;
 }
 
 #p1:hover {
@@ -102,5 +103,6 @@ padding: 40px;
 footer { 
   background-color: #673503;
   grid-column: 1/5;
-grid-row: 3/4 ;
+  grid-row: 3/4 ;
+  height: 150px;
 }
