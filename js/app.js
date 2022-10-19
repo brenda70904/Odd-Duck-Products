@@ -5,7 +5,7 @@
 let container = document.getElementById('imageSection');
 //let results = document.querySelector('ul');
 let howManyTimesUserHasVoted = 0;
-let maxNumberOfVotes = 2;
+let maxNumberOfVotes = 25;
 //let btn = document.querySelector('button');
 let product1 = document.getElementById('p1');
 let product2 = document.getElementById('p2');
@@ -73,14 +73,6 @@ function renderImage() {
   product3.alt = allProducts[p3].name;
   allProducts[p3].views++;
 
-  // let p1 = randomPick();
-  // let p2 = randomPick();
-  // let p3 = randomPick();
-  // while (p1 === p2 || p1 === p3 || p2 === p3) {
-  //   p1 = randomPick();
-  //   p2 = randomPick();
-  //   p3 = randomPick();
-  // }
 }
 
 
